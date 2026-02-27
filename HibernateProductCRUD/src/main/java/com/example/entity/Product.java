@@ -3,27 +3,25 @@ package com.example.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "product")
+@Table(name = "products")
 public class Product {
 
     @Id
-    
-    // Try different ID generation strategies:
-    // GenerationType.AUTO
-    // GenerationType.IDENTITY
-    // GenerationType.SEQUENCE
-    
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-
+    @Column(name = "name")
     private String name;
-    private String description;
-    private double price;
-    private int quantity;
 
+    @Column(name = "description")
+    private String description;
+
+    @Column(name = "price")
+    private double price;
+
+    @Column(name = "quantity")
+    private int quantity;
     // Default constructor
-    public Product() {
-    }
+    public Product() {}
 
     // Parameterized constructor
     public Product(String name, String description, double price, int quantity) {
@@ -37,6 +35,10 @@ public class Product {
 
     public int getId() {
         return id;
+    }
+    
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -73,9 +75,7 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Product [id=" + id + ", name=" + name +
-                ", description=" + description +
-                ", price=" + price +
-                ", quantity=" + quantity + "]";
+        return "Product [id=" + id + ", name=" + name + ", description=" + description + ", price=" + price + ", quantity=" + quantity + "]";
     }
 }
+
