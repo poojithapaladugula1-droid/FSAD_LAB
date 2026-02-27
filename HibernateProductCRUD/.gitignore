@@ -1,0 +1,18 @@
+/target/
+# Eclipse project files
+.settings/
+.project
+.classpath
+
+# Maven target folder
+target/
+
+# Database credentials
+src/main/resources/db.properties
+
+# Logs
+*.log
+
+# IDE folders
+.vscode/
+.idea/
